@@ -142,7 +142,7 @@
 }
 
 .bg-card{
-    background-color: lab(92 -3.8 16.55);
+    background-color: lab(97 1 1);
 }
 .p-6 {
     padding: calc(var(--spacing) * 10);

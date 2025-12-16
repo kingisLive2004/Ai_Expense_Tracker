@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/header";
 import Link from "next/link"; // Added for footer links
+import { Toaster } from "sonner"; // Import Toaster component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,11 @@ export default function RootLayout({ children }) {
 
           <main className="min-h-screen">{children}</main>
 
+          <Toaster richColors />
+
           {/* --- UPDATED FOOTER --- */}
           {/* 1. Removed all padding/border classes from footer tag, added bg-white */}
-          <footer className="bg-white mt-10">
+          <footer className="border bg-gradient-to-br from-background via-purple-950/5 to-background text-card-foreground py-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-purple-500/30">
             <div className="container mx-auto px-4">
               {/* 2. New div for the top border, with horizontal margin (mx-8 = 32px) */}
               <div className="border-t border-black mx-8"></div>
@@ -102,11 +105,10 @@ export default function RootLayout({ children }) {
 
                 {/* 4. Second border added with horizontal margin and margin-top */}
 
-
                 {/* 5. Copyright section, spaced with margin-top */}
                 <div className="mt-8 text-center text-sm text-gray-500">
-                  <p>&copy; 2024 ExpTrack. All rights reserved.</p>
-                  <p className="mt-1">Made with ❤ by Avinaba</p>
+                  <p>&copy; 2025 ExpTrack. All rights reserved.</p>
+                  <p className="mt-1">Made with ❤ by Team-27</p>
                 </div>
               </div>
             </div>
@@ -117,4 +119,3 @@ export default function RootLayout({ children }) {
     </ClerkProvider>
   );
 }
-

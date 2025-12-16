@@ -23,7 +23,7 @@ export default function HomePage() {
 
   return (
     // pt-16 ensures content starts below the fixed 4rem (h-16) header
-    <main className="bg-background text-foreground">
+    <main className="bg-background text-foreground bg-grey-200">
       {/* Hero Section - We'll give this a simple fade-in on load */}
       <motion.section
         className="container mx-auto flex flex-col items-center px-4 py-20 text-center md:py-32"
@@ -31,16 +31,25 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-          Manage your Finances
+        <h1 className="text-4xl font-bold tracking-tight md:text-6xl leading-tight">
+          <span className="bg-gradient-to-r from-purple-600 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+            Manage your Finances
+          </span>
           <br />
-          with Intelligence
-          <span className="text-primary"> AI</span>
+          <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 bg-clip-text text-transparent">
+            with Intelligent AI
+          </span>
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-          A smart expense tracking app that helps users manage and analyze
-          their finances easily.
+
+        <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground">
+          A smart expense-tracking platform powered by AI to help you
+          <span className="font-medium text-purple-400">
+            {" "}
+            track, analyze, and optimize{" "}
+          </span>
+          your finances effortlessly.
         </p>
+
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Button asChild size="lg" className="rounded-full">
             <Link href="/sign-up">Get Started</Link>
@@ -76,23 +85,45 @@ export default function HomePage() {
         {...sectionAnimation}
       >
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+          <h2
+            className="text-3xl font-bold tracking-tight md:text-4xl 
+                 bg-gradient-to-r from-purple-600 via-violet-500 to-fuchsia-500 
+                 bg-clip-text text-transparent"
+          >
             Everything you need. Nothing you don't.
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Our app is packed with features powered by AI to help you take
-            control of your finances.
+
+          <p
+            className="mt-4 max-w-2xl mx-auto text-lg 
+                text-muted-foreground"
+          >
+            Our app is packed with
+            <span className="font-medium text-purple-400"> AI-powered </span>
+            features to help you take control of your finances.
           </p>
         </div>
+
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featuresData.map((feature) => (
-            // Kept the hover/focus lift effect here
             <div
               key={feature.title}
-              className="flex flex-col gap-4 rounded-lg border bg-card p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg"
+              className="flex flex-col gap-4 rounded-xl border 
+                 bg-gradient-to-br from-background to-purple-950/5 
+                 p-6 transition-all duration-300 ease-in-out
+                 hover:-translate-y-1 hover:shadow-xl 
+                 hover:border-purple-500/30
+                 focus-within:-translate-y-1 focus-within:shadow-xl"
             >
-              {feature.icon}
-              <h3 className="text-xl font-semibold">{feature.title}</h3>
+              <div className="text-purple-500">{feature.icon}</div>
+
+              <h3
+                className="text-xl font-semibold 
+                     bg-gradient-to-r from-purple-500 to-pink-500 
+                     bg-clip-text text-transparent"
+              >
+                {feature.title}
+              </h3>
+
               <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
@@ -101,16 +132,18 @@ export default function HomePage() {
 
       {/* How It Works Section */}
       {/* CHANGED: <section> to <motion.section> and added animation props */}
-      <motion.section
-        className="bg-muted py-20 md:py-32"
-        {...sectionAnimation}
-      >
+      <motion.section className="bg-muted py-20 md:py-32" {...sectionAnimation}>
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+            <h2
+              className="text-3xl font-bold tracking-tight md:text-4xl
+                   bg-gradient-to-r from-purple-600 via-violet-500 to-fuchsia-500
+                   bg-clip-text text-transparent"
+            >
               Get started in 3 simple steps
             </h2>
           </div>
+
           <div className="relative mt-16 grid gap-12 md:grid-cols-3">
             {/* Dashed line connecting steps (visible on desktop) */}
             <div className="absolute top-1/2 left-0 hidden w-full -translate-y-1/2 md:block">
@@ -125,21 +158,49 @@ export default function HomePage() {
                   x2="100%"
                   y2="1"
                   strokeWidth="2"
-                  stroke="hsl(var(--border))"
+                  stroke="url(#stepGradient)"
                   strokeDasharray="8 8"
                 />
+                <defs>
+                  <linearGradient
+                    id="stepGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stopColor="#9c5dd6ff" />
+                    <stop offset="50%" stopColor="#c59fe9ff" />
+                    <stop offset="100%" stopColor="#ec4899" />
+                  </linearGradient>
+                </defs>
               </svg>
             </div>
+
             {howItWorksData.map((step) => (
               <div
                 key={step.title}
                 className="relative z-10 flex flex-col items-center text-center"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-dashed border-primary bg-background">
+                <div
+                  className="flex h-16 w-16 items-center justify-center rounded-full
+                     bg-gradient-to-br from-purple-600 via-violet-500 to-fuchsia-500
+                     text-white shadow-lg ring-4 ring-purple-500/20"
+                >
                   {step.icon}
                 </div>
-                <h3 className="mt-6 text-xl font-semibold">{step.title}</h3>
-                <p className="mt-2 text-muted-foreground">{step.description}</p>
+
+                <h3
+                  className="mt-6 text-xl font-semibold
+                       bg-gradient-to-r from-purple-500 to-pink-500
+                       bg-clip-text text-transparent"
+                >
+                  {step.title}
+                </h3>
+
+                <p className="mt-2 text-muted-foreground max-w-xs">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
@@ -153,26 +214,29 @@ export default function HomePage() {
         {...sectionAnimation}
       >
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+          <h2
+            className="text-3xl font-bold tracking-tight md:text-4xl
+           bg-gradient-to-r from-purple-600 via-violet-500 to-fuchsia-500
+           bg-clip-text text-transparent"
+          >
             Trusted by users worldwide
           </h2>
         </div>
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 ">
           {testimonialsData.map((testimonial) => (
-            // Kept the hover/focus lift effect here
             <div
               key={testimonial.name}
-              className="flex flex-col justify-between rounded-lg border bg-card p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg"
+              className="flex flex-col justify-between rounded-lg border bg-card p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg border bg-gradient-to-br from-background via-purple-950/5 to-background text-card-foreground py-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-purple-500/30"
             >
               <blockquote className="text-lg italic text-foreground font-serif">
                 "{testimonial.quote}"
               </blockquote>
-              <footer className="mt-6 flex items-center gap-4">
+              <footer className="mt-6 flex items-center gap-4 ">
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  width={48}
-                  height={48}
+                  width={100}
+                  height={100}
                   className="rounded-full"
                 />
                 <div>

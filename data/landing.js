@@ -90,28 +90,28 @@ export const testimonialsData = [
   {
     name: "Sara Brahma",
     role: "Small Business Owner",
-    image: "https://randomuser.me/api/portraits/women/75.jpg",
+    image: "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80",
     quote:
       "ExpTrack has transformed how I manage my business finances. The multi-currency support and detailed analytics are game-changers.",
   },
   {
     name: "Avinaba Ghosh",
     role: "Freelancer",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    image: "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80",
     quote:
       "The receipt scanning feature saves me hours each month. It's incredibly accurate and makes tax season so much easier.",
   },
   {
     name: "Preyoshi Mondal",
     role: "Student",
-    image: "https://randomuser.me/api/portraits/women/74.jpg",
+    image: "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80",
     quote:
       "I finally feel in control of my budget. The intelligent planning and automated insights helped me save money faster than I thought possible.",
   },
   {
     name: "Samik Bhattacharya",
     role: "Financial Advisor",
-    image: "https://randomuser.me/api/portraits/men/74.jpg",
+    image: "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80",
     quote:
       "I recommend ExpTrack to all my clients. It's a powerful, all-in-one tool that simplifies complex financial management.",
   },
