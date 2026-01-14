@@ -8,6 +8,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
+
   },
   "dependencies": {
     "@clerk/nextjs": "^6.33.3",
